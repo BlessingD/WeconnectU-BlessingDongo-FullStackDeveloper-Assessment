@@ -1,0 +1,33 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - .:/var/www/html
+
+    depends_on:
+      - database
+
+  database:
+    image: mysql:8.4
+
+    environment:
+      MYSQL_DATABASE: contact_assessment
+      MYSQL_USER: contact_user
+      MYSQL_PASSWORD: contact_password
+      MYSQL_ROOT_PASSWORD: root_password
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+
+volumes:
+  mysql_data:
