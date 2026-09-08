@@ -13,8 +13,8 @@ class Database
         $username = getenv('DB_USERNAME');
         $password = getenv('DB_PASSWORD');
 
-     // Data source Name(DSN)
-        $dsn = "mysql:host={$host};port={$port};dbname={$database};charset=utf8mb4";
+     // Data source Name(dsn)
+        $dsn = "mysql:host={$host}; port={$port}; dbname={$database}; charset=utf8mb4";
 
         $this->connection = new PDO($dsn, $username, $password, 
         [

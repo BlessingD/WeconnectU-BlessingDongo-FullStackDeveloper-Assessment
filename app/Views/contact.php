@@ -146,15 +146,12 @@ $data = $data ?? [];
                     <?php endif; ?>
 
 
-                    <!-- Validation summary -->
+                    <!-- Validation summary (WHEN THE USER TRIES TO SUBMIT) -->
                     <?php if (!empty($errors)): ?>
 
                         <div class="alert alert-danger" role="alert">
-
                             <strong>Please check your details.</strong>
-
                             Correct the highlighted fields below and try again.
-
                         </div>
 
                     <?php endif; ?>
@@ -163,16 +160,14 @@ $data = $data ?? [];
                     <!-- Contact form -->
                     <form id="contact-form" method="POST" action="/" novalidate autocomplete="on">
 
-                        <!-- CSRF protection -->
+                        <!-- CSRF protection, security boet! -->
                         <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
 
 
                         <!-- Name -->
                         <div class="mb-3">
 
-                            <label for="name" class="form-label">
-                                Full Name
-                            </label>
+                            <label for="name" class="form-label"> Full Name</label>
 
                             <input type="text" class="form-control <?= isset($errors['name']) ? 'is-invalid' : '' ?>"
                                 id="name"
@@ -197,9 +192,7 @@ $data = $data ?? [];
                         <!-- Email -->
                         <div class="mb-3">
 
-                            <label for="email" class="form-label">
-                                Email Address
-                            </label>
+                            <label for="email" class="form-label">Email Address</label>
 
                             <input type="email" class="form-control <?= isset($errors['email']) ? 'is-invalid' : '' ?>"
                                 id="email"
@@ -224,12 +217,7 @@ $data = $data ?? [];
                         <!-- Phone -->
                         <div class="mb-3">
 
-                            <label
-                                for="phone"
-                                class="form-label"
-                            >
-                                Phone Number
-                            </label>
+                            <label for="phone" class="form-label">Phone Number </label>
 
                            <div class="input-group">
 
@@ -238,7 +226,7 @@ $data = $data ?? [];
     </span>
 
     <input
-        type="tel"
+        type="tel" 
         class="form-control <?= isset($errors['phone']) ? 'is-invalid' : '' ?>"
         id="phone"
         name="phone"
@@ -246,8 +234,7 @@ $data = $data ?? [];
         placeholder="82 123 4567"
         autocomplete="tel"
         inputmode="tel"
-        required
-    >
+        required >
 
 </div>
                             
@@ -266,10 +253,7 @@ $data = $data ?? [];
                         <!-- Message -->
                         <div class="mb-4">
 
-                            <label
-                                for="message"
-                                class="form-label"
-                            >
+                            <label for="message" class="form-label">
                                 Message
                             </label>
 

@@ -23,11 +23,7 @@ class Contact
     }
 
  
-    public function create(
-    string $name,
-    string $email,
-    string $phone,
-    string $message
+    public function create(string $name, string $email,string $phone,string $message
                           ): bool {
     $sql = 'INSERT INTO contacts (name, email, phone, message)
             VALUES (:name, :email, :phone, :message)';

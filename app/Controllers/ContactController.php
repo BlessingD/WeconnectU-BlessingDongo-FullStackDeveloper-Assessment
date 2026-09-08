@@ -38,7 +38,7 @@ class ContactController
 
     public function store(array $data): array
     {
-        // Validate the submitted form data before saving anything
+        // Validate the submitted form data before saving anything in the db.
         $errors = $this->validator->validate($data);
 
         if (!empty($errors)) {
